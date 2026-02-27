@@ -2,133 +2,186 @@
 
 ## 概要
 このフォルダには定期評価アプリで使用するJSONデータファイルを格納します。
+データは複数のアプリ・マスタから連携されます。
+
+---
+
+## データソース概要
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  企業_マスタ（共有ドライブ）                                   │
+│  └─ ジュネストリー様/                                        │
+│      ├─ employees.json  ← 社員マスタ                        │
+│      └─ stores.json     ← 店舗マスタ                        │
+└─────────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────────┐
+│  定性評価アプリ                                              │
+│  └─ 出力:                                                   │
+│      ├─ qualitative_categories.json  ← 評価カテゴリ         │
+│      └─ qualitative_scores_{期間}.json ← 定性評価スコア     │
+└─────────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────────┐
+│  定量評価アプリ（作成予定）                                    │
+│  └─ 出力:                                                   │
+│      └─ quantitative_scores_{期間}.json ← 定量評価スコア    │
+└─────────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────────┐
+│  定期評価アプリ（本アプリ）                                    │
+│  ├─ 入力: 上記すべて                                         │
+│  └─ 出力:                                                   │
+│      ├─ evaluation_results_{期間}.json ← 評価結果（総合）   │
+│      └─ evaluation_results_{期間}.csv  ← CSV出力           │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 
 ## ファイル一覧
 
-### マスタデータ（随時更新）
+### 外部連携データ（他アプリ・マスタから取得）
 
-| ファイル名 | 説明 | ソース元 | 更新タイミング |
-|-----------|------|---------|--------------|
-| `employees.json` | 社員マスタ | Excelマクロ「★【査定用】定量･定性評価集計」DBシート | 社員情報変更時 |
-| `stores.json` | 店舗マスタ | Excelマクロ「店舗マスタ」シート | 店舗追加・変更時 |
-| `rank_rules.json` | ランク判定基準 | 手動設定 | ルール変更時 |
-| `promotion_rules.json` | 昇格判定基準 | 手動設定 | ルール変更時 |
-| `qualitative_categories.json` | 定性評価カテゴリ | 手動設定 | カテゴリ変更時 |
-| `app_settings.json` | アプリ設定 | 手動設定 | 設定変更時 |
-| `bonus_settings.json` | 賞与設定 | 手動設定 | 設定変更時 |
-| `qsc_rules.json` | QSC加点ルール | 手動設定 | ルール変更時 |
-| `rule_change_logs.json` | ルール変更履歴 | 自動生成 | ルール変更時 |
+| ファイル名 | 説明 | ソース元 | 共有ドライブ |
+|-----------|------|---------|-------------|
+| `employees.json` | 社員マスタ | 企業_マスタ | 企業_マスタ/ジュネストリー様/ |
+| `stores.json` | 店舗マスタ | 企業_マスタ | 企業_マスタ/ジュネストリー様/ |
+| `qualitative_categories.json` | 定性評価カテゴリ | 定性評価アプリ | 定量定性_マスタ/ジュネストリー様/ |
+| `qualitative_scores_{期間}.json` | 定性評価スコア | 定性評価アプリ | 定量定性_マスタ/ジュネストリー様/ |
+| `quantitative_scores_{期間}.json` | 定量評価スコア | 定量評価アプリ | 定量定性_マスタ/ジュネストリー様/ |
 
-### 期間別データ（評価期ごと）
+### 本アプリ管理データ
 
-| ファイル名 | 説明 | ソース元 |
+| ファイル名 | 説明 | 管理元 |
+|-----------|------|-------|
+| `rank_rules.json` | ランク判定基準（S/A/B/C/D/E） | 本アプリで設定 |
+| `promotion_rules.json` | 昇格判定基準 | 本アプリで設定 |
+| `app_settings.json` | アプリ設定 | 本アプリで設定 |
+| `bonus_settings.json` | 賞与設定 | 本アプリで設定 |
+| `qsc_rules.json` | QSC加点ルール | 本アプリで設定 |
+| `rule_change_logs.json` | ルール変更履歴 | 自動記録 |
+
+### 本アプリ出力データ
+
+| ファイル名 | 説明 | 出力形式 |
 |-----------|------|---------|
-| `evaluation_results_{期間}.json` | 評価結果（総合） | Excelマクロ「DB」シート + 抽出スクリプト |
-| `qualitative_scores_{期間}.json` | 定性評価スコア | Excelマクロ「定性評価データ」シート |
-| `quantitative_scores_{期間}.json` | 定量評価スコア | Excelマクロ「定量評価データ」シート |
-| `ranking_{期間}.json` | ランキングデータ | 自動計算 |
+| `evaluation_results_{期間}.json` | 評価結果（総合） | JSON |
+| `evaluation_results_{期間}.csv` | 評価結果（総合） | CSV（外部出力用） |
+| `ranking_{期間}.json` | ランキングデータ | JSON |
 
 **期間形式**: `2025_H2`（2025年下期）、`2026_H1`（2026年上期）など
 
 ---
 
-## データ作成手順
+## 共有ドライブ構成
 
-### 1. Excelマクロからデータ抽出
+```
+企業_マスタ（0ALKGxglDUv_vUk9PVA）
+└─ ジュネストリー様/（1L_TJrrzfFHDrsYYY83vjzt-jSOs0JNqE）
+    ├─ employees.json           # 社員マスタ
+    ├─ stores.json              # 店舗マスタ
+    └─ store_code_mapping.csv   # 店舗コードマッピング
 
-#### 前提条件
-- Python 3.x インストール済み
-- openpyxl ライブラリインストール済み（`pip install openpyxl`）
+部下評価_マスタ（定性評価アプリ）
+└─ ジュネストリー様/（1DcH7xWR_4INdF8cEfS9KO1TTMA0brw9T）
+    └─ 入力データ/（1NIy-sn4pwR9UuyDyQxNPPEu7JXw29E7A）
+        └─ exports/（15PP3tY2hDG0qn7olxFPqxIyLggHq2Mqu）
+            └─ export_latest_{日時}.csv  # 定性評価スコア
 
-#### 手順
+定量評価_マスタ（定量評価アプリ・今後作成）
+└─ 株式会社ジュネストリー様/（18_eAXK7sef1laZDsWQCr6gG6msCzJ1fG）
+    └─ （定量評価データを配置予定）
 
-```bash
-# 1. 抽出スクリプトのあるディレクトリに移動
-cd c:\Users\yasuh\OneDrive\デスクトップ\APP\定量定性
-
-# 2. Excelファイルを閉じた状態で実行
-python extract_excel_data.py
+定量定性_マスタ（0AEtCE-VntoLuUk9PVA）【本アプリ用】
+└─ ジュネストリー様/（14nb4yPZjdg_Ya7yhvLgsfiVXGwmjbfPg）
+    ├─ README.md                          # 本ファイル
+    ├─ evaluation_results_2025_H2.json    # 本アプリで生成
+    ├─ evaluation_results_2025_H2.csv     # 本アプリで生成
+    ├─ rank_rules.json                    # 本アプリで管理
+    ├─ promotion_rules.json               # 本アプリで管理
+    └─ ...
 ```
 
-#### 抽出スクリプトの処理内容
-1. `店舗マスタ`シート → `stores.json`
-2. `定量評価データ`シート → 月次定量データ（evaluation_resultsに含む）
-3. `定性評価データ`シート → 定性評価詳細（evaluation_resultsに含む）
-4. `DB`シート → `employees.json`, `evaluation_results_{期間}.json`
+### フォルダ・ファイルID一覧（ジュネストリー様）
 
-### 2. Google Driveへアップロード
-
-```bash
-# アップロードスクリプト実行
-python upload_to_drive.py
-```
+| 項目 | 共有ドライブ | ID |
+|-----|-------------|-----|
+| **企業マスタフォルダ** | 企業_マスタ | `1L_TJrrzfFHDrsYYY83vjzt-jSOs0JNqE` |
+| └ employees.json | 企業_マスタ | `1tjeEk_z_pU-1oB6FqDvBexEgu99XpUgo` |
+| └ stores.json | 企業_マスタ | `1tvdlX073h1jjHgrhFMxs0U6TzgdM936t` |
+| └ store_code_mapping.csv | 企業_マスタ | `1PygDvHV2dBrBCT2BLN3RKlxBm8mQtbaN` |
+| **定性評価フォルダ** | 部下評価_マスタ | `1DcH7xWR_4INdF8cEfS9KO1TTMA0brw9T` |
+| └ exports | 部下評価_マスタ | `15PP3tY2hDG0qn7olxFPqxIyLggHq2Mqu` |
+| **定量評価フォルダ（予定）** | 定量評価_マスタ | `18_eAXK7sef1laZDsWQCr6gG6msCzJ1fG` |
+| **本アプリデータフォルダ** | 定量定性_マスタ | `14nb4yPZjdg_Ya7yhvLgsfiVXGwmjbfPg` |
 
 ---
 
-## evaluation_results_{期間}.json の構造
+## 評価計算フロー
 
-```json
-{
-  "period": "2025_H2",
-  "generatedAt": "2026-02-27T12:00:00",
-  "items": [
-    {
-      "employeeId": "00001",
-      "employeeName": "山田太郎",
-      "role": "manager",        // manager or staff
-      "storeId": "1102",
-      "storeName": "均タロー!大宮店",
-      "grade": "G3",
-      "rank": "A",
-      "totalScore": 350.5,
-      "quantitativeScore": 200.0,
-      "qualitativeScore": 100.5,
-      "monthlyData": [          // 月次定量データ
-        {
-          "year": 2025,
-          "month": 5,
-          "storeName": "均タロー!大宮店",
-          "mngScore": 210.0
-        }
-      ],
-      "qualitativeDetails": [   // 定性評価詳細
-        {
-          "category": "理念",
-          "itemName": "【理念の共感】",
-          "isImportant": true,
-          "managerScore": 3.5,  // 店長用
-          "finalScore": 3.5     // 一般社員用
-        }
-      ]
-    }
-  ]
-}
+```
+1. マスタデータ読込
+   └─ employees.json, stores.json（企業_マスタから）
+
+2. 評価スコア読込
+   ├─ qualitative_scores_{期間}.json（定性評価アプリから）
+   └─ quantitative_scores_{期間}.json（定量評価アプリから）
+
+3. ルール読込
+   ├─ rank_rules.json
+   ├─ promotion_rules.json
+   └─ qsc_rules.json
+
+4. 評価計算
+   ├─ 定量評価 × ウェイト
+   ├─ 定性評価 × ウェイト
+   ├─ QSC加点
+   └─ 総合点 → ランク判定
+
+5. 結果出力
+   ├─ evaluation_results_{期間}.json（Drive保存）
+   └─ evaluation_results_{期間}.csv（ダウンロード用）
 ```
 
 ---
 
-## 注意事項
+## CSV出力仕様（予定）
 
-### 店長と一般社員の違い
-- **店長（manager）**: `quantitativeWeight >= 1.0`
-  - 定性評価は `managerScore` を使用
-  - 組織診断は `total_ranking` を表示
-- **一般社員（staff）**: `quantitativeWeight < 1.0`
-  - 定性評価は `finalScore` を使用
-  - 組織診断は `pa_ranking` を表示
-
-### 重点項目
-- `isImportant: true` の項目は1点以上で2.5倍加点
+| 列名 | 説明 |
+|-----|------|
+| 社員番号 | employeeId |
+| 氏名 | employeeName |
+| 店舗 | storeName |
+| 等級 | grade |
+| ランク | rank |
+| 総合点 | totalScore |
+| 定量点 | quantitativeScore |
+| 定性点 | qualitativeScore |
+| 社内順位 | companyRank |
+| ... | |
 
 ---
 
-## 関連ファイル
+## 店長と一般社員の違い
 
-- **抽出スクリプト**: `c:\Users\yasuh\OneDrive\デスクトップ\APP\定量定性\extract_excel_data.py`
-- **アップロードスクリプト**: `c:\Users\yasuh\OneDrive\デスクトップ\APP\定量定性\upload_to_drive.py`
-- **ソースExcel**: `★【査定用】定量･定性評価集計_ジュネストリー様_.xlsm`
+| 項目 | 店長（manager） | 一般社員（staff） |
+|-----|----------------|-----------------|
+| 判定条件 | quantitativeWeight >= 1.0 | quantitativeWeight < 1.0 |
+| 定性評価スコア | managerScore | finalScore |
+| 組織診断ランキング | total_ranking | pa_ranking |
+| 重点項目加点 | 1点以上で2.5倍 | 1点以上で2.5倍 |
+
+---
+
+## 今後の実装予定
+
+- [ ] 企業_マスタからの社員・店舗マスタ自動読込
+- [ ] 定性評価アプリとのデータ連携
+- [ ] 定量評価アプリとのデータ連携
+- [ ] 評価結果のCSV出力機能
+- [ ] 評価期間の動的切り替え
 
 ---
 
@@ -136,4 +189,4 @@ python upload_to_drive.py
 
 | 日付 | 内容 |
 |-----|------|
-| 2026-02-27 | 初版作成 |
+| 2026-02-27 | 初版作成、データフロー整理 |
