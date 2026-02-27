@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "updatedAt": "2026-02-26T00:00:00+09:00",
+  "rankCoefficients": [
+    { "rank": "S", "coefficient": 1.5 },
+    { "rank": "A", "coefficient": 1.2 },
+    { "rank": "B", "coefficient": 1.0 },
+    { "rank": "C", "coefficient": 0.6 },
+    { "rank": "D", "coefficient": 0.3 },
+    { "rank": "E", "coefficient": 0.0 }
+  ],
+  "roleCoefficients": [
+    { "role": "manager", "coefficient": 1.5 },
+    { "role": "assistant_manager", "coefficient": 1.5 },
+    { "role": "staff", "coefficient": 1.0 }
+  ],
+  "distribution": {
+    "individual": 0.85,
+    "store": 0.0,
+    "other": 0.15
+  }
+}

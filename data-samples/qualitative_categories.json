@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "updatedAt": "2026-02-26T00:00:00+09:00",
+  "managerCategories": [
+    {
+      "categoryId": "M1",
+      "categoryName": "理念",
+      "maxScore": 10,
+      "sortOrder": 1,
+      "enabled": true
+    },
+    {
+      "categoryId": "M2",
+      "categoryName": "課題解決力",
+      "maxScore": 17,
+      "sortOrder": 2,
+      "enabled": true
+    },
+    {
+      "categoryId": "M3",
+      "categoryName": "業務管理",
+      "maxScore": 13,
+      "sortOrder": 3,
+      "enabled": true
+    },
+    {
+      "categoryId": "M4",
+      "categoryName": "人員教育管理",
+      "maxScore": 42,
+      "sortOrder": 4,
+      "enabled": true
+    },
+    {
+      "categoryId": "M5",
+      "categoryName": "会社が求める人間力",
+      "maxScore": 63,
+      "sortOrder": 5,
+      "enabled": true
+    },
+    {
+      "categoryId": "M6",
+      "categoryName": "基本姿勢",
+      "maxScore": 0,
+      "sortOrder": 6,
+      "enabled": true
+    }
+  ],
+  "staffCategories": [
+    {
+      "categoryId": "S1",
+      "categoryName": "心構え",
+      "maxScore": 11,
+      "sortOrder": 1,
+      "enabled": true
+    },
+    {
+      "categoryId": "S2",
+      "categoryName": "対人調整力",
+      "maxScore": 39,
+      "sortOrder": 2,
+      "enabled": true
+    },
+    {
+      "categoryId": "S3",
+      "categoryName": "店長力",
+      "maxScore": 16,
+      "sortOrder": 3,
+      "enabled": true
+    },
+    {
+      "categoryId": "S4",
+      "categoryName": "QSC",
+      "maxScore": 24,
+      "sortOrder": 4,
+      "enabled": true
+    },
+    {
+      "categoryId": "S5",
+      "categoryName": "業務",
+      "maxScore": 20,
+      "sortOrder": 5,
+      "enabled": true
+    }
+  ],
+  "managerWeights": {
+    "managerEvaluation": 0.8,
+    "subordinateEvaluation": 0.2
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "logId": "LOG-0001",
+      "timestamp": "2026-02-26T10:00:00+09:00",
+      "actorId": "system",
+      "actorName": "system",
+      "ruleType": "rank",
+      "action": "simulate",
+      "reason": "テスト",
+      "beforeSnapshot": {
+        "A": 85
+      },
+      "afterSnapshot": {
+        "A": 83
+      },
+      "impactSummary": {
+        "changedEmployees": 1
+      },
+      "applied": false
+    }
+  ]
+}

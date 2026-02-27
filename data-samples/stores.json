@@ -1,0 +1,118 @@
+{
+  "items": [
+    {
+      "storeId": "9999",
+      "storeName": "本社",
+      "businessType": "",
+      "active": true
+    },
+    {
+      "storeId": "2301",
+      "storeName": "鶏ヤロー!蒲田店",
+      "businessType": "鶏ヤロー",
+      "active": true
+    },
+    {
+      "storeId": "2303",
+      "storeName": "鶏ヤロー!下北沢店",
+      "businessType": "鶏ヤロー",
+      "active": true
+    },
+    {
+      "storeId": "2304",
+      "storeName": "鶏ヤロー!横浜店",
+      "businessType": "鶏ヤロー",
+      "active": true
+    },
+    {
+      "storeId": "2305",
+      "storeName": "鶏ヤロー!歌舞伎町2号店",
+      "businessType": "鶏ヤロー",
+      "active": true
+    },
+    {
+      "storeId": "1102",
+      "storeName": "均タロー!大宮店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1103",
+      "storeName": "均タロー!高田馬場店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1104",
+      "storeName": "均タロー!溝の口店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1106",
+      "storeName": "均タロー!渋谷店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1107",
+      "storeName": "均タロー!川越店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1108",
+      "storeName": "均タロー!橋本店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1109",
+      "storeName": "均タロー!吉祥寺店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1110",
+      "storeName": "均タロー!横浜店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1111",
+      "storeName": "均タロー!蒲田店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "1112",
+      "storeName": "均タロー!平塚店",
+      "businessType": "均タロー",
+      "active": true
+    },
+    {
+      "storeId": "3101",
+      "storeName": "きんたろう本厚木店",
+      "businessType": "きんたろう",
+      "active": true
+    },
+    {
+      "storeId": "3102",
+      "storeName": "きんたろう練馬店",
+      "businessType": "きんたろう",
+      "active": true
+    },
+    {
+      "storeId": "4101",
+      "storeName": "魚ゑもん 柏店",
+      "businessType": "魚ゑもん",
+      "active": true
+    },
+    {
+      "storeId": "1113",
+      "storeName": "均タロー!浜松店",
+      "businessType": "均タロー",
+      "active": true
+    }
+  ]
+}

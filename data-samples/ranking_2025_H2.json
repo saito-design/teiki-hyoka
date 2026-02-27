@@ -1,0 +1,55 @@
+{
+  "period": "2025_H2",
+  "overall": [
+    {
+      "employeeId": "E001",
+      "rank": 1
+    },
+    {
+      "employeeId": "E002",
+      "rank": 2
+    },
+    {
+      "employeeId": "E003",
+      "rank": 3
+    }
+  ],
+  "byRole": {
+    "manager": [
+      {
+        "employeeId": "E001",
+        "rank": 1
+      }
+    ],
+    "assistant_manager": [
+      {
+        "employeeId": "E002",
+        "rank": 1
+      }
+    ],
+    "staff": [
+      {
+        "employeeId": "E003",
+        "rank": 1
+      }
+    ]
+  },
+  "byStore": {
+    "S001": [
+      {
+        "employeeId": "E001",
+        "rank": 1
+      },
+      {
+        "employeeId": "E002",
+        "rank": 2
+      }
+    ],
+    "S002": [
+      {
+        "employeeId": "E003",
+        "rank": 1
+      }
+    ]
+  }
+}

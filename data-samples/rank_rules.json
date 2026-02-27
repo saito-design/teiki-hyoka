@@ -1,0 +1,263 @@
+{
+  "version": 2,
+  "updatedAt": "2025-11-01T00:00:00Z",
+  "crossMatrix": [
+    {
+      "quantitativeRank": "S",
+      "qualitativeRank": "S",
+      "finalRank": "S"
+    },
+    {
+      "quantitativeRank": "S",
+      "qualitativeRank": "A",
+      "finalRank": "A"
+    },
+    {
+      "quantitativeRank": "S",
+      "qualitativeRank": "B",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "S",
+      "qualitativeRank": "C",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "S",
+      "qualitativeRank": "D",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "S",
+      "qualitativeRank": "E",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "A",
+      "qualitativeRank": "S",
+      "finalRank": "S"
+    },
+    {
+      "quantitativeRank": "A",
+      "qualitativeRank": "A",
+      "finalRank": "A"
+    },
+    {
+      "quantitativeRank": "A",
+      "qualitativeRank": "B",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "A",
+      "qualitativeRank": "C",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "A",
+      "qualitativeRank": "D",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "A",
+      "qualitativeRank": "E",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "B",
+      "qualitativeRank": "S",
+      "finalRank": "A"
+    },
+    {
+      "quantitativeRank": "B",
+      "qualitativeRank": "A",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "B",
+      "qualitativeRank": "B",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "B",
+      "qualitativeRank": "C",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "B",
+      "qualitativeRank": "D",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "B",
+      "qualitativeRank": "E",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "C",
+      "qualitativeRank": "S",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "C",
+      "qualitativeRank": "A",
+      "finalRank": "B"
+    },
+    {
+      "quantitativeRank": "C",
+      "qualitativeRank": "B",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "C",
+      "qualitativeRank": "C",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "C",
+      "qualitativeRank": "D",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "C",
+      "qualitativeRank": "E",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "D",
+      "qualitativeRank": "S",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "D",
+      "qualitativeRank": "A",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "D",
+      "qualitativeRank": "B",
+      "finalRank": "C"
+    },
+    {
+      "quantitativeRank": "D",
+      "qualitativeRank": "C",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "D",
+      "qualitativeRank": "D",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "D",
+      "qualitativeRank": "E",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "E",
+      "qualitativeRank": "S",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "E",
+      "qualitativeRank": "A",
+      "finalRank": "D"
+    },
+    {
+      "quantitativeRank": "E",
+      "qualitativeRank": "B",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "E",
+      "qualitativeRank": "C",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "E",
+      "qualitativeRank": "D",
+      "finalRank": "E"
+    },
+    {
+      "quantitativeRank": "E",
+      "qualitativeRank": "E",
+      "finalRank": "E"
+    }
+  ],
+  "thresholds": {
+    "quantitative": [
+      {
+        "rank": "S",
+        "minScore": 360
+      },
+      {
+        "rank": "A",
+        "minScore": 335
+      },
+      {
+        "rank": "B",
+        "minScore": 250
+      },
+      {
+        "rank": "C",
+        "minScore": 180
+      },
+      {
+        "rank": "D",
+        "minScore": 150
+      }
+    ],
+    "managerQualitative": [
+      {
+        "rank": "S",
+        "minScore": 130
+      },
+      {
+        "rank": "A",
+        "minScore": 110
+      },
+      {
+        "rank": "B",
+        "minScore": 80
+      },
+      {
+        "rank": "C",
+        "minScore": 60
+      },
+      {
+        "rank": "D",
+        "minScore": 25
+      },
+      {
+        "rank": "E",
+        "minScore": 0
+      }
+    ],
+    "staffQualitative": [
+      {
+        "rank": "S",
+        "minScore": 150
+      },
+      {
+        "rank": "A",
+        "minScore": 125
+      },
+      {
+        "rank": "B",
+        "minScore": 100
+      },
+      {
+        "rank": "C",
+        "minScore": 75
+      },
+      {
+        "rank": "D",
+        "minScore": 55
+      },
+      {
+        "rank": "E",
+        "minScore": 0
+      }
+    ]
+  },
+  "description": "定量ランクと定性ランクのクロス評価で総合ランクを決定（クロスマトリックス・定量閾値は全職種共通）"
+}

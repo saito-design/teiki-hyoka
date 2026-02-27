@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "updatedAt": "2026-02-26T00:00:00+09:00",
+  "categories": [
+    {
+      "categoryId": "Q1",
+      "categoryName": "QSC",
+      "weight": 0.4,
+      "maxScore": 40,
+      "roleTargets": [
+        "manager",
+        "assistant_manager",
+        "staff"
+      ],
+      "enabled": true,
+      "sortOrder": 1
+    },
+    {
+      "categoryId": "Q2",
+      "categoryName": "人材育成",
+      "weight": 0.3,
+      "maxScore": 30,
+      "roleTargets": [
+        "manager",
+        "assistant_manager"
+      ],
+      "enabled": true,
+      "sortOrder": 2
+    },
+    {
+      "categoryId": "Q3",
+      "categoryName": "接客",
+      "weight": 0.3,
+      "maxScore": 30,
+      "roleTargets": [
+        "staff"
+      ],
+      "enabled": true,
+      "sortOrder": 3
+    }
+  ]
+}

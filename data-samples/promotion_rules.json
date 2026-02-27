@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "updatedAt": "2025-11-01T00:00:00Z",
+  "rules": [
+    { "currentRank": "S", "nextRank": "S", "promotionLevel": 2 },
+    { "currentRank": "S", "nextRank": "A", "promotionLevel": 1 },
+    { "currentRank": "S", "nextRank": "B", "promotionLevel": 0 },
+    { "currentRank": "S", "nextRank": "C", "promotionLevel": 0 },
+    { "currentRank": "S", "nextRank": "D", "promotionLevel": 0 },
+    { "currentRank": "S", "nextRank": "E", "promotionLevel": 0 },
+    { "currentRank": "A", "nextRank": "S", "promotionLevel": 1 },
+    { "currentRank": "A", "nextRank": "A", "promotionLevel": 1 },
+    { "currentRank": "A", "nextRank": "B", "promotionLevel": 0 },
+    { "currentRank": "A", "nextRank": "C", "promotionLevel": 0 },
+    { "currentRank": "A", "nextRank": "D", "promotionLevel": 0 },
+    { "currentRank": "A", "nextRank": "E", "promotionLevel": 0 },
+    { "currentRank": "B", "nextRank": "S", "promotionLevel": 0 },
+    { "currentRank": "B", "nextRank": "A", "promotionLevel": 0 },
+    { "currentRank": "B", "nextRank": "B", "promotionLevel": 0 },
+    { "currentRank": "B", "nextRank": "C", "promotionLevel": 0 },
+    { "currentRank": "B", "nextRank": "D", "promotionLevel": 0 },
+    { "currentRank": "B", "nextRank": "E", "promotionLevel": -1 },
+    { "currentRank": "C", "nextRank": "S", "promotionLevel": 0 },
+    { "currentRank": "C", "nextRank": "A", "promotionLevel": 0 },
+    { "currentRank": "C", "nextRank": "B", "promotionLevel": 0 },
+    { "currentRank": "C", "nextRank": "C", "promotionLevel": 0 },
+    { "currentRank": "C", "nextRank": "D", "promotionLevel": 0 },
+    { "currentRank": "C", "nextRank": "E", "promotionLevel": -1 },
+    { "currentRank": "D", "nextRank": "S", "promotionLevel": 0 },
+    { "currentRank": "D", "nextRank": "A", "promotionLevel": 0 },
+    { "currentRank": "D", "nextRank": "B", "promotionLevel": 0 },
+    { "currentRank": "D", "nextRank": "C", "promotionLevel": 0 },
+    { "currentRank": "D", "nextRank": "D", "promotionLevel": 0 },
+    { "currentRank": "D", "nextRank": "E", "promotionLevel": -1 },
+    { "currentRank": "E", "nextRank": "S", "promotionLevel": 0 },
+    { "currentRank": "E", "nextRank": "A", "promotionLevel": 0 },
+    { "currentRank": "E", "nextRank": "B", "promotionLevel": 0 },
+    { "currentRank": "E", "nextRank": "C", "promotionLevel": 0 },
+    { "currentRank": "E", "nextRank": "D", "promotionLevel": -1 },
+    { "currentRank": "E", "nextRank": "E", "promotionLevel": -1 }
+  ],
+  "descriptions": [
+    "半年ごと「A」以上で+5,000円",
+    "「C」でマイナス5,000円",
+    "一般社員は「A」以上で+3,000円"
+  ],
+  "salaryAdjustment": {
+    "manager": {
+      "rankA": 5000,
+      "rankC": -5000
+    },
+    "staff": {
+      "rankA": 3000
+    }
+  }
+}

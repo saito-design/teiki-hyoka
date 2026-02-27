@@ -1,0 +1,29 @@
+{
+  "period": "2025_H2",
+  "items": [
+    {
+      "employeeId": "E001",
+      "evaluatorId": "ADMIN",
+      "categoryId": "Q1",
+      "rawScore": 36,
+      "adjustedScore": 36,
+      "comment": "安定"
+    },
+    {
+      "employeeId": "E002",
+      "evaluatorId": "ADMIN",
+      "categoryId": "Q1",
+      "rawScore": 34,
+      "adjustedScore": 34,
+      "comment": "良好"
+    },
+    {
+      "employeeId": "E003",
+      "evaluatorId": "ADMIN",
+      "categoryId": "Q3",
+      "rawScore": 25,
+      "adjustedScore": 25,
+      "comment": "改善余地あり"
+    }
+  ]
+}

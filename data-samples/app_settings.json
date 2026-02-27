@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "roundingMode": "round",
+  "tieBreakOrder": [
+    "totalScore",
+    "quantitativeScore",
+    "employeeCode"
+  ],
+  "defaultPeriod": "2025_H2",
+  "allowPopupWindows": true
+}
