@@ -30,7 +30,8 @@ export async function readJsonFromDrive<T>(
     const response = await drive.files.list({
       q: `name='${fileName}' and '${rootFolderId}' in parents and trashed=false`,
       fields: 'files(id, name)',
-      spaces: 'drive',
+      supportsAllDrives: true,
+      includeItemsFromAllDrives: true,
     });
 
     if (!response.data.files || response.data.files.length === 0) {
@@ -42,7 +43,7 @@ export async function readJsonFromDrive<T>(
 
   // ファイル内容を取得
   const fileResponse = await drive.files.get(
-    { fileId, alt: 'media' },
+    { fileId, alt: 'media', supportsAllDrives: true },
     { responseType: 'text' }
   );
 
